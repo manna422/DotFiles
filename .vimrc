@@ -77,12 +77,24 @@ set laststatus=2
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
-nnoremap <leader>p :set paste!<CR>:set nu!<CR>:set rnu!<CR>       " toggle paste mode
+" LEADER COMBOS
+"
+" toggle paste mode
+nnoremap <leader>p :set paste!<CR>:set nu!<CR>:set rnu!<CR>
+
+" run current buffer in python
 nnoremap <leader>e :! clear; python %<CR>
+
+" run current buffer interactively in ipython
 nnoremap <leader>i :! clear; ipython -i %<CR>
+
 " leader w - strip trailing whitespace
 nnoremap <leader>w <Esc>:%s/\s\+$//<CR>
+
+" togger nerd tree
 nnoremap <leader>t <Esc>:NERDTreeToggle<CR>
+
+" run screen
 nnoremap <leader>q <Esc>:! screen<CR>
 
 
