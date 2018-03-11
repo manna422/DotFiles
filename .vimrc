@@ -14,6 +14,12 @@ set smarttab
 
 let mapleader = "\<Space>"
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
@@ -33,6 +39,7 @@ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
+syntax on
 
 " map fuzzyfinder (CtrlP) plugin
 " CtrlP ignore patterns
@@ -82,11 +89,12 @@ set laststatus=2
 " toggle paste mode
 nnoremap <leader>p :set paste!<CR>:set nu!<CR>:set rnu!<CR>
 
-" run current buffer in python
-nnoremap <leader>e :! clear; python %<CR>
+" run current buffer in python/node
+autocmd BufNewFile,BufRead *.py nnoremap <leader>e :! clear; python %<CR>
+autocmd BufNewFile,BufRead *.js nnoremap <leader>e :! clear; node %<CR>
 
 " run current buffer interactively in ipython
-nnoremap <leader>i :! clear; ipython -i %<CR>
+autocmd BufNewFile,BufRead *.py nnoremap <leader>i :! clear; ipython -i %<CR>
 
 " leader w - strip trailing whitespace
 nnoremap <leader>w <Esc>:%s/\s\+$//<CR>
