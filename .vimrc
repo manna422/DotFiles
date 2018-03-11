@@ -1,6 +1,4 @@
 " generic setting
-au BufRead,BufNewFile *.ptest set filetype=json
-syntax on
 set rnu
 set nu
 set hls
@@ -28,14 +26,19 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'bling/vim-airline'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wikitopian/hardmode'
-Plugin 'scrooloose/nerdtree'
+
+" au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+" au BufRead,BufNewFile *.eex set filetype=eelixir
 
 call vundle#end()
 filetype plugin indent on
